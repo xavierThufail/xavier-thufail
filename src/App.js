@@ -1,10 +1,13 @@
 import React from 'react';
 
+import AppContextProvider from './Contexts';
+import Routes from './Routes';
+
 const App = () => {
   return (
-    <div className="App">
-      App
-    </div>
+    <AppContextProvider>
+      <Routes />
+    </AppContextProvider>
   );
 }
 
