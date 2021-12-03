@@ -1,13 +1,17 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import AppContextProvider from './Contexts';
 import Routes from './Routes';
+import store from './Store';
 
 const App = () => {
   return (
-    <AppContextProvider>
-      <Routes />
-    </AppContextProvider>
+    <Provider store={store}>
+      <AppContextProvider>
+        <Routes />
+      </AppContextProvider>
+    </Provider>
   );
 }
 
