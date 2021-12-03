@@ -18,9 +18,7 @@ const routeMapper = ({ path, component: Component }, index) => (
   />
 );
 
-const Routes = () => {
-  console.log('MASOK ROUTES')
-  return(
+const Routes = () => (
   <BrowserRouter>
     <RouteRD>
       <Route
@@ -30,6 +28,6 @@ const Routes = () => {
       {config.routeConfigs.map(routeMapper)}
     </RouteRD>
   </BrowserRouter>
-)};
+);
 
 export default Routes;
