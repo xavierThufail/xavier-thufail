@@ -42,7 +42,6 @@ app.post("/authenticate", (req, res) => {
         })
       })
     .then(({ data }) => {
-      console.log({data})
       res.status(200).json(data)
     })
     .catch((error) => {

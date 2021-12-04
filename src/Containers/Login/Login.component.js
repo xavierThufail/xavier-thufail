@@ -12,13 +12,11 @@ const _renderLogin = () => (
   </a>
 );
 
-const LoginComponent = (props) => {
-  console.log({  props})
-  return (
+const LoginComponent = () => (
   <div style={styles.container}>
     {_renderLogin()}
   </div>
-);};
+);
 
 LoginComponent.displayName = config.component.displayName;
 
