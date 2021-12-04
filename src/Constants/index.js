@@ -1,5 +1,7 @@
 import routePaths from './routePaths';
+import env from './env';
 
 export {
-  routePaths
+  routePaths,
+  env
 };
