@@ -22,6 +22,15 @@ const setError = (payload) => ({
   payload
 });
 
+const setItems = (payload) => ({
+  type: 'USER/SET_ITEMS',
+  payload
+});
+
+const resetUsers = () => ({
+  type: 'USER/RESET'
+})
+
 const getUser = ({ code, navigate, login }) => {
   return async (dispatch) => {
     dispatch(setLoading(true));
@@ -34,7 +43,7 @@ const getUser = ({ code, navigate, login }) => {
       });
 
       dispatch(setUser(data));
-      login(code);
+      login(data);
       navigate('/');
     } catch (error) {
       dispatch(setError(error));
@@ -44,6 +53,28 @@ const getUser = ({ code, navigate, login }) => {
   };
 };
 
+const getItems = (url) => {
+  return async (dispatch) => {
+    dispatch(setLoading(true));
+    try {
+      const { data } = await axios(url, {
+        method: 'GET'
+      });
+
+      console.log({data})
+
+      dispatch(setItems(data));
+    } catch (error) {
+      dispatch(setError(error));
+    } finally {
+      dispatch(setLoading(false));
+    }
+  };
+};
+
 export default {
-  getUser
+  getUser,
+  setUser,
+  getItems,
+  resetUsers
 }
