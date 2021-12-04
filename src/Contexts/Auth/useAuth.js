@@ -3,19 +3,20 @@ import React from "react";
 const useAuth = () => {
   const [isLogin, setLogin] = React.useState(false);
 
-  const login = () => {
+  const login = (user) => {
+    localStorage.setItem('user', JSON.stringify(user));
     setLogin(true);
   }
 
   const logout = () => {
     setLogin(false);
-    localStorage.removeItem('token');
+    localStorage.removeItem('user');
   };
 
   React.useEffect(() => {
-    const token = localStorage.token;
+    const user = localStorage.user;
 
-    if(token) {
+    if(user) {
       setLogin(true);
     }
   }, []);
