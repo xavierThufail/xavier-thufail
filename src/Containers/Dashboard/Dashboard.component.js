@@ -106,8 +106,6 @@ const DashboardComponent = (props) => {
     profileImage,
   } = props;
 
-  console.log({ props })
-
   return (
     <div style={styles.container}>
       {_renderNavbar({ logout })}
