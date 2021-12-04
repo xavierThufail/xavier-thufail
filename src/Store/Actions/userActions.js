@@ -61,8 +61,6 @@ const getItems = (url) => {
         method: 'GET'
       });
 
-      console.log({data})
-
       dispatch(setItems(data));
     } catch (error) {
       dispatch(setError(error));
